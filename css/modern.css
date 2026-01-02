@@ -549,6 +549,7 @@ body::before {
     margin-bottom: var(--spacing-md);
     animation: fadeInUp 0.6s ease 0.2s both;
     letter-spacing: -0.02em;
+    white-space: nowrap;
 }
 
 .gradient-text {
@@ -573,9 +574,10 @@ body::before {
 .rotating-words {
     display: inline-block;
     position: relative;
-    min-width: 350px;
-    height: 1.2em;
+    min-width: 200px;
+    height: 1.1em;
     vertical-align: baseline;
+    white-space: nowrap;
 }
 
 .rotating-words .word {
