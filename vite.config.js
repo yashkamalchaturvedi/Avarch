@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite';
+import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig({
   root: '.',
@@ -18,5 +19,15 @@ export default defineConfig({
         'single-project': './single-project.html'
       }
     }
-  }
+  },
+  plugins: [
+    viteStaticCopy({
+      targets: [
+        {
+          src: 'js/*',
+          dest: 'js'
+        }
+      ]
+    })
+  ]
 });
