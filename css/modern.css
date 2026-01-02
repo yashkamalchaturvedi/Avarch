@@ -101,6 +101,60 @@ body {
     overflow-x: hidden;
     position: relative;
     min-height: 100vh;
+    font-size: 16px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 800;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+}
+
+h3 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 700;
+}
+
+h4 {
+    font-size: clamp(1.25rem, 2.5vw, 1.5rem);
+    font-weight: 600;
+}
+
+h5 {
+    font-size: clamp(1.125rem, 2vw, 1.25rem);
+    font-weight: 600;
+}
+
+h6 {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+p {
+    margin-bottom: 1rem;
+    line-height: 1.7;
+}
+
+a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: var(--transition-fast);
+}
+
+a:hover {
+    color: var(--primary-light);
 }
 
 /* Background Effects */
@@ -520,18 +574,17 @@ body::before {
     display: inline-block;
     position: relative;
     min-width: 350px;
-    min-height: 1.2em;
-    vertical-align: top;
+    height: 1.2em;
+    vertical-align: baseline;
 }
 
 .rotating-words .word {
     position: absolute;
     left: 0;
-    right: 0;
     top: 0;
     opacity: 0;
-    transform: translateY(30px);
-    animation: rotateWord 12s infinite;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    transform: translateY(20px);
     white-space: nowrap;
     background: var(--gradient-2);
     -webkit-background-clip: text;
@@ -540,13 +593,7 @@ body::before {
     background-size: 200% 200%;
 }
 
-.rotating-words .word:nth-child(1) { animation-delay: 0s; }
-.rotating-words .word:nth-child(2) { animation-delay: 3s; }
-.rotating-words .word:nth-child(3) { animation-delay: 6s; }
-.rotating-words .word:nth-child(4) { animation-delay: 9s; }
-
 .rotating-words .word.active {
-    position: relative !important;
     opacity: 1 !important;
     transform: translateY(0) !important;
     animation: gradientShift 5s ease infinite !important;
