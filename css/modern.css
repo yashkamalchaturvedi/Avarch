@@ -519,8 +519,7 @@ body::before {
 .rotating-words {
     display: inline-block;
     position: relative;
-    min-width: 300px;
-    height: 1.2em;
+    min-width: 350px;
     vertical-align: top;
 }
 
@@ -528,9 +527,11 @@ body::before {
     position: absolute;
     left: 0;
     right: 0;
+    top: 0;
     opacity: 0;
     transform: translateY(30px);
     animation: rotateWord 12s infinite;
+    white-space: nowrap;
 }
 
 .rotating-words .word:nth-child(1) { animation-delay: 0s; }
@@ -539,9 +540,9 @@ body::before {
 .rotating-words .word:nth-child(4) { animation-delay: 9s; }
 
 .rotating-words .word.active {
-    position: relative;
-    opacity: 1;
-    transform: translateY(0);
+    position: relative !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
 }
 
 @keyframes rotateWord {
