@@ -58,9 +58,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const currentScroll = window.pageYOffset;
 
         if (currentScroll > 100) {
-            navbar.style.background = 'rgba(15, 23, 42, 0.95)';
+            navbar.style.background = 'rgba(10, 14, 39, 0.95)';
         } else {
-            navbar.style.background = 'rgba(15, 23, 42, 0.8)';
+            navbar.style.background = 'rgba(10, 14, 39, 0.8)';
         }
 
         lastScroll = currentScroll;
@@ -78,4 +78,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    const form = document.querySelector('.contact-form form');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            form.reset();
+        });
+    }
 });
